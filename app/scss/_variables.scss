@@ -1,0 +1,29 @@
+// COLORS
+$color-primary: #697ca6;
+$color-secondary: #6188ff;
+$color-divider: #d8e3fe;
+// END COLORS
+
+$base: 4px;
+
+// === FONT WEIGHT ===
+$fw-light: 300;
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-bold: 700;
+// === / FONT WEIGHT ===
+
+// === FONT SIZE ===
+$fs-sm: 12px;
+$fs-md: 15px;
+// === / FONT SIZE ===
+
+// === WHITE SPACE ===
+$padding-vertical-xs: $base * 5;
+$padding-vertical-sm: $base * 15;
+$padding-vertical: $base * 30;
+// === / WHITE SPACE ===
+
+// === TRANSITION ===
+$transition-fast: 0.2s;
+// === / TRANSITION ===
