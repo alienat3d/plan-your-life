@@ -111,27 +111,32 @@
 .slider-hero-image {
   @include list-null;
 
+  .section-inner {
+    padding-top: 92px;
+  }
+
   &__item {
+    padding-bottom: 30px;
     height: $base * 140;
     text-align: center;
     background-repeat: no-repeat;
     background-position: 50% 100%;
     background-size: cover;
+  }
 
-    &-content {
-      h2 {
-        font-weight: $fw-light;
+  &__item-content {
+    h2 {
+      font-weight: $fw-light;
 
-        span {
-          font-weight: $fw-medium;
-        }
+      span {
+        font-weight: $fw-medium;
       }
+    }
 
-      .text {
-        width: 60%;
-        margin: 0 auto $base * 5;
-        line-height: 2;
-      }
+    .text {
+      width: 60%;
+      margin: 0 auto $base * 5;
+      line-height: 2;
     }
   }
 }
@@ -225,7 +230,7 @@
 
 // === FEATURES ===
 .section-features {
-  background: url('../images/clouds.svg') no-repeat 50% 50%;
+  background: url('../images/blue-clouds.svg') no-repeat 50% 50%;
 
   .btns {
     display: flex;
@@ -603,12 +608,99 @@
 
 // === / BLOG ===
 
-// === QUOTES ===
-.section-quotes {
-  background-color: #eaf0ff;
+// === TESTIMONIALS ===
+.section-testimonials {
+  background: linear-gradient(180deg, #EAF0FF 0%, #F6F9FF 100%);
+
+  .section-inner {
+    padding: $base * 28 $base * 2;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__left,
+  &__right {
+    flex-basis: 45%;
+  }
+
+  // .section-testimonials__left
+  &__left {
+    max-width: $base * 85;
+
+    h5 {
+      margin-top: $base * 13;
+      margin-bottom: $base * 9;
+    }
+
+    h3 {
+      margin-bottom: $base * 4;
+      font-weight: $fw-bold;
+    }
+
+    .text {
+      font-weight: $fw-medium;
+      font-size: $fs-sm;
+      line-height: 1.9;
+      color: #a4abc8;
+    }
+  }
+
+  // .section-testimonials__right
+  &__right {
+    position: relative;
+    flex-basis: $base * 106;
+
+    .dots {
+      position: absolute;
+      bottom: -2%;
+      left: 55%;
+      transform: translateX(-48%);
+    }
+  }
 }
 
-// === / QUOTES ===
+.slider-testimonials {
+  margin-bottom: $base * 20;
+
+  // .slider-testimonials__item
+  &__item {
+    @include list-null;
+
+    position: relative;
+    border: 1px solid $color-divider;
+    padding: $base * 9 $base * 16 $base * 13;
+    background-color: $color-white;
+    box-shadow: 0px 15px 50px #d4dcf1;
+  }
+
+  // .slider-testimonials__item-text
+  &__item-text {
+    font-size: $fs-md;
+    line-height: 1.7;
+    color: #676f95;
+  }
+
+  // .slider-testimonials__item-avatar
+  &__item-avatar {
+    $height: $base * 16;
+
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+    border-radius: 50%;
+    margin-top: -$height/2;
+    width: $height;
+    height: $height;
+    background-color: $color-white;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+// === / TESTIMONIALS ===
 
 // === FAQ ===
 
