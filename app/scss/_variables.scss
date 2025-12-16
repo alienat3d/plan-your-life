@@ -1,0 +1,37 @@
+// COLORS
+$color-primary: #697ca6;
+$color-secondary: #6188ff;
+$color-white: #fff;
+$color-red: #d43f3f;
+$color-pink: #ffd7d7;
+$color-divider: #d8e3fe;
+$color-bg: #f1f5ff;
+// END COLORS
+
+$base: 4px;
+
+// === FONT WEIGHT ===
+$fw-light: 300;
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-bold: 700;
+// === / FONT WEIGHT ===
+
+// === FONT SIZE ===
+$fs-xs: 11px;
+$fs-sm: 12px;
+$fs-md: 15px;
+$fs-lg: 18px;
+$fs-xl: 48px;
+// === / FONT SIZE ===
+
+// === WHITE SPACE ===
+$padding-vertical-xs: $base * 5;
+$padding-vertical-sm: $base * 15;
+$padding-vertical: $base * 30;
+// === / WHITE SPACE ===
+
+// === TRANSITION ===
+$transition-fast: .2s;
+$transition-medium: .5s;
+// === / TRANSITION ===

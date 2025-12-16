@@ -1,0 +1,13 @@
+@mixin roboto {
+  font-family: "Roboto", sans-serif;
+}
+
+@mixin quicksand {
+  font-family: "Quicksand", sans-serif;
+}
+
+@mixin list-null {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
