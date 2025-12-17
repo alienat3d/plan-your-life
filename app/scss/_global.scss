@@ -52,11 +52,20 @@ button {
   }
 
   &--secondary {
-    color: #fff;
+    color: $color-white;
     background-color: #4c85ff;
 
     &:hover {
       background-color: darken(#4c85ff, 5%);
+    }
+
+    &-inverted {
+      color: #565f82;
+      background-color: $color-white;
+
+      &:hover {
+        background-color: darken($color-white, 5%);
+      }
     }
   }
 
@@ -67,6 +76,16 @@ button {
     &:hover {
       color: darken(#adb4d2, 10%);
       border: 1px solid darken(#d1d1e4, 10%);
+    }
+
+    &-inverted {
+      border: 1px solid #a0b4ff;
+      color: #c7d3ff;
+
+      &:hover {
+        border-color: lighten(#a0b4ff, 5%);
+        color: lighten(#c7d3ff, 5%);
+      }
     }
   }
 
