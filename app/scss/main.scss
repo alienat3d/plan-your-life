@@ -22,10 +22,13 @@ body {
 }
 
 .logo {
-  width: $base * 6;
-  height: $base * 6;
-  background-color: #5e81fe;
-  border-radius: 100%;
+  &__link {
+    display: inline-block;
+    width: $base * 6;
+    height: $base * 6;
+    background-color: #5e81fe;
+    border-radius: 100%;
+  }
 }
 
 .nav {
@@ -730,7 +733,7 @@ body {
     padding: 0 $base * 6 $base * 6;
     border-bottom: 1px solid #d8e3fe;
 
-    &.active #{$parent}__content {
+    &--active #{$parent}__content {
       display: flex;
     }
   }
@@ -752,10 +755,10 @@ body {
       transition: $transition-medium;
     }
 
-    #{$parent}__item.active & {
+    #{$parent}__item--active & {
       color: #495274;
     }
-    #{$parent}__item.active & svg {
+    #{$parent}__item--active & svg {
       transform: rotate(180deg);
     }
   }
