@@ -132,14 +132,6 @@ body {
   }
 
   &__item-content {
-    h2 {
-      font-weight: $fw-light;
-
-      span {
-        font-weight: $fw-medium;
-      }
-    }
-
     .text {
       max-width: 60%;
       margin: 0 auto $base * 5;
@@ -204,14 +196,6 @@ body {
       left: 50%;
     }
 
-    h3 {
-      font-weight: $fw-light;
-
-      span {
-        font-weight: $fw-medium;
-      }
-    }
-
     .text {
       margin-bottom: $base * 12;
       line-height: 2;
@@ -238,6 +222,11 @@ body {
 // === FEATURES ===
 .section-features {
   background: url("../images/blue-clouds.svg") no-repeat 50% 50%;
+
+  .section-subtitle {
+    margin-bottom: 92px;
+    font-size: 24px;
+  }
 
   .btns {
     display: flex;
@@ -348,6 +337,7 @@ body {
 
   // .features-list__item-title
   &__item-title {
+    @include roboto;
     margin-bottom: $base * 7;
     font-weight: $fw-bold;
     font-size: $fs-md;
@@ -357,8 +347,8 @@ body {
 
   // .features-list__item-text
   &__item-text {
-    font-style: $fs-xs;
-    line-height: 1.8;
+    font-size: $fs-sm;
+    line-height: 1.77;
     color: #adb3cb;
   }
 }
@@ -432,6 +422,11 @@ body {
 // === BLOG ===
 .section-blog {
   background-color: #f5f8ff;
+
+  .section-subtitle {
+    margin-bottom: 92px;
+    font-size: 24px;
+  }
 }
 
 .slider-wrapper {
@@ -576,6 +571,11 @@ body {
   &__item-content {
     margin-left: 10%;
 
+    .title {
+      margin-bottom: $base * 8;
+      font-size: 36px;
+    }
+
     .text {
       margin-bottom: $base * 14;
       font-size: $fs-md;
@@ -630,6 +630,11 @@ body {
 // === TESTIMONIALS ===
 .section-testimonials {
   background: linear-gradient(180deg, #eaf0ff 0%, #f6f9ff 100%);
+
+  .section-subtitle {
+    margin-bottom: $base * 4;
+    font-size: 36px;
+  }
 
   .section-inner {
     padding: $base * 28 $base * 2;
@@ -722,6 +727,12 @@ body {
 // === / TESTIMONIALS ===
 
 // === FAQ ===
+.section-faq {
+  .section-subtitle {
+    margin-bottom: $base * 18;
+    font-size: 24px;
+  }
+}
 
 .faq-accordion {
   $parent: &;
@@ -740,26 +751,34 @@ body {
 
   // .faq-accordion__trigger
   &__trigger {
-    @include quicksand;
-    font-weight: 700;
-    font-size: 15px;
-    line-height: 130%;
     color: #8e96b7;
 
     svg {
       margin-right: 15px;
-      margin-bottom: -1px;
       width: 18px;
       height: 11px;
       vertical-align: baseline;
       transition: $transition-medium;
     }
 
-    #{$parent}__item--active & {
-      color: #495274;
+    h3 {
+      @include quicksand;
+      display: inline-block;
+      font-weight: 700;
+      font-size: 15px;
+      line-height: 130%;
+      color: #8e96b7;
     }
-    #{$parent}__item--active & svg {
-      transform: rotate(180deg);
+
+    #{$parent}__item--active & {
+      &,
+      h3 {
+        color: #495274;
+      }
+
+      svg {
+        transform: rotate(180deg);
+      }
     }
   }
 
@@ -806,16 +825,8 @@ body {
   }
 
   h2,
-  h5 {
+  .section-subtitle {
     color: $color-white;
-  }
-
-  h2 {
-    font-weight: $fw-light;
-
-    span {
-      font-weight: $fw-medium;
-    }
   }
 
   .text {

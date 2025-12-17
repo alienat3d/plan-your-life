@@ -126,15 +126,20 @@ h6 {
   padding: 0;
   margin: 0;
   font-weight: $fw-regular;
-  color: #3d4f9f;
+  color: $color-title;
 }
 
 h2 {
-  margin-bottom: $base * 7;
-  font-size: 48px;
+  @include roboto;
+
+  margin-bottom: $base * 4;
+  font-weight: $fw-medium;
+  font-size: $fs-xs;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
-h3 {
+/* h3 {
   margin-bottom: $base * 7;
   font-size: 36px;
 }
@@ -152,6 +157,22 @@ h5 {
   font-size: 10px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+} */
+
+.section-subtitle {
+  @include quicksand;
+  margin-bottom: $base * 7;
+  font-weight: $fw-light;
+  font-size: 48px;
+  color: $color-title;
+
+  span {
+    font-weight: $fw-medium;
+  }
+}
+
+.section-subtitle:not(:has(span)) {
+  font-weight: $fw-medium;
 }
 
 .ta-c {
