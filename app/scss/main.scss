@@ -832,6 +832,63 @@ body {
 // === NEWSLETTER ===
 .section-newsletter {
   background-color: #fcfdff;
+
+  .section-inner {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .form {
+    display: flex;
+    column-gap: $base * 4;
+
+    &__input,
+    &__btn {
+      @include quicksand;
+      border-radius: 5px;
+      min-height: 59px;
+      font-weight: $fw-bold;
+      font-size: 13px;
+    }
+
+    &__input {
+      border: 1px solid transparent;
+      padding: 0 23px;
+      flex-grow: 1;
+      background-color: #efeff7;
+
+      &::placeholder {
+        color: #7a85ad;
+      }
+    }
+
+    &__btn {
+      border: 1px solid transparent;
+      flex-basis: 184px;
+    }
+  }
+
+  &__left {
+    flex-basis: 35%;
+  }
+
+  &__title {
+    @include quicksand;
+    margin-bottom: $base * 4;
+    text-transform: initial;
+    font-weight: $fw-bold;
+    font-size: $fs-lg;
+    color: #3d4f9f;
+  }
+
+  &__description {
+    font-size: $fs-md;
+    line-height: 1.9;
+  }
+
+  &__right {
+    flex-basis: 55%;
+  }
 }
 
 // === / NEWSLETTER ===

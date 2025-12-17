@@ -42,6 +42,12 @@ button {
   line-height: 1;
   transition: $transition-fast;
 
+  &--size-lg {
+    border-radius: 5px;
+    padding: $base * 5 $base * 15;
+    font-size: 13px;
+  }
+
   &--primary {
     color: #3a79ff;
     background-color: #d2e1ff;
