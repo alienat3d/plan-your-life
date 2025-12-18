@@ -51,6 +51,7 @@
   ],
   "dependencies": {
     "basiclightbox": "^5.0.4",
+    "gulp-if": "^3.0.0",
     "hamburgers": "^1.2.1",
     "lightgallery": "^2.9.0",
     "swiper": "^12.0.3"

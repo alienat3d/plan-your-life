@@ -16,7 +16,8 @@ const del = require("del"),
   sourcemaps = require("gulp-sourcemaps"),
   autoprefixer = require("gulp-autoprefixer"),
   fonter = require("gulp-fonter"),
-  ttf2woff2 = require("gulp-ttf2woff2");
+  ttf2woff2 = require("gulp-ttf2woff2"),
+  gulpIf = require("gulp-if");
 
 const sourceFolder = "app"; //папка куда собираем все исходники проекта (html, scss, js, img и т.п.)
 const buildFolder = "docs"; //папка куда собирается проект (указываем docs, если нужен gitHubPage, дополнительно нужно указать в настройках gitHub)
@@ -114,14 +115,17 @@ function js() {
 
 function img() {
   return src(sourceFolder + "/img/**/*.{png,jpg,webp,svg}")
-    .pipe(dest(buildFolder + "/img"))
     .pipe(
-      squoosh(() => ({
-        encodeOptions: {
-          webp: {},
-          avif: {},
-        },
-      }))
+      gulpIf(
+        (file) => file.extname !== ".svg", // If it's NOT an SVG...
+        squoosh(() => ({
+          // ...then run squoosh
+          encodeOptions: {
+            webp: {},
+            avif: {},
+          },
+        }))
+      )
     )
     .pipe(dest(buildFolder + "/img"));
 }

@@ -48,7 +48,7 @@ body {
     &-link {
       @include quicksand;
 
-      font-size: $fs-sm;
+      font-size: $fs-xs;
       font-weight: $fw-medium;
       color: $color-primary;
       text-decoration: none;
@@ -238,7 +238,7 @@ body {
       align-items: center;
       text-transform: uppercase;
       font-weight: $fw-medium;
-      font-size: $fs-xs;
+      font-size: $fs-xxs;
       line-height: 1.8;
 
       &::before,
@@ -340,14 +340,14 @@ body {
     @include roboto;
     margin-bottom: $base * 7;
     font-weight: $fw-bold;
-    font-size: $fs-md;
+    font-size: $fs-xs;
     color: #4074f8;
     transition: color $transition-fast;
   }
 
   // .features-list__item-text
   &__item-text {
-    font-size: $fs-sm;
+    font-size: $fs-xs;
     line-height: 1.77;
     color: #adb3cb;
   }
@@ -406,13 +406,13 @@ body {
 
   &__number {
     margin-bottom: $base * 1;
-    font-size: $fs-xl;
+    font-size: $fs-xxl;
   }
 
   &__text {
     width: 40%;
     font-weight: $fw-medium;
-    font-size: $fs-lg;
+    font-size: $fs-xs;
     line-height: 1.3;
   }
 }
@@ -573,12 +573,12 @@ body {
 
     .title {
       margin-bottom: $base * 8;
-      font-size: 36px;
+      font-size: $fs-xl;
     }
 
     .text {
       margin-bottom: $base * 14;
-      font-size: $fs-md;
+      font-size: $fs-xs;
       line-height: 1.9;
       letter-spacing: 0.03em;
     }
@@ -633,7 +633,7 @@ body {
 
   .section-subtitle {
     margin-bottom: $base * 4;
-    font-size: 36px;
+    font-size: $fs-xl;
   }
 
   .section-inner {
@@ -663,7 +663,7 @@ body {
 
     .text {
       font-weight: $fw-medium;
-      font-size: $fs-sm;
+      font-size: $fs-xs;
       line-height: 1.9;
       color: #a4abc8;
     }
@@ -699,7 +699,7 @@ body {
 
   // .slider-testimonials__item-text
   &__item-text {
-    font-size: $fs-md;
+    font-size: $fs-xs;
     line-height: 1.7;
     color: #676f95;
   }
@@ -891,12 +891,12 @@ body {
     margin-bottom: $base * 4;
     text-transform: initial;
     font-weight: $fw-bold;
-    font-size: $fs-lg;
+    font-size: $fs-xs;
     color: #3d4f9f;
   }
 
   &__description {
-    font-size: $fs-md;
+    font-size: $fs-xs;
     line-height: 1.9;
   }
 
@@ -922,7 +922,7 @@ body {
 
   margin-top: $base * 7;
   margin-left: $base * 24;
-  font-size: $fs-sm;
+  font-size: $fs-xs;
   font-weight: $fw-medium;
   color: #aeb8d0;
 }
