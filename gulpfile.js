@@ -47,7 +47,7 @@ function bem() {
 }
 
 function svg() {
-  return src(sourceFolder + "/img/**/*.svg")
+  return src(sourceFolder + "/img/*.svg")
     .pipe(svgmin())
     .pipe(dest(buildFolder + "/img"));
 }
@@ -114,7 +114,10 @@ function js() {
 }
 
 function img() {
-  return src(sourceFolder + "/img/**/*.{png,jpg,webp,svg}", "!/img/icons/")
+  return src([
+    sourceFolder + "/img/**/*.{png,jpg,webp,svg}",
+    "!" + sourceFolder + "/img/icons/**/*",
+  ])
     .pipe(
       gulpIf(
         (file) => file.extname !== ".svg", // If it's NOT an SVG...
