@@ -114,7 +114,7 @@ function js() {
 }
 
 function img() {
-  return src(sourceFolder + "/img/**/*.{png,jpg,webp,svg}")
+  return src(sourceFolder + "/img/**/*.{png,jpg,webp,svg}", "!/img/icons/")
     .pipe(
       gulpIf(
         (file) => file.extname !== ".svg", // If it's NOT an SVG...

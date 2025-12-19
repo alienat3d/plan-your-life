@@ -60,7 +60,7 @@ body {
 
       &--active {
         font-weight: $fw-bold;
-        color: $color-secondary;
+        color: #5e81fe;
       }
     }
   }
@@ -74,23 +74,29 @@ body {
   @include list-null;
 
   display: flex;
-  align-items: center;
+  align-items: flex-end;
 
   &__item {
+    --icon-color-1: #9399ab;
+    --icon-color-2: #70788e;
+    --icon-color-3: #b6bac7;
+
+    &:nth-child(2):hover {
+      --icon-color-1: #8eabff;
+      --icon-color-2: #6188ff;
+      --icon-color-3: #4a6ed1;
+    }
+
     & + & {
       margin-left: $base * 10;
     }
 
     &-link {
-      path {
-        fill: $color-primary;
-        transition: $transition-fast;
-      }
+      color: #b6bac7;
+      transition: all $transition-fast;
 
       &:hover {
-        path {
-          fill: $color-secondary;
-        }
+        color: $color-secondary;
       }
     }
   }
@@ -925,6 +931,32 @@ body {
   font-size: $fs-xs;
   font-weight: $fw-medium;
   color: #aeb8d0;
+
+  a {
+    position: relative;
+    color: inherit;
+    text-decoration: none;
+    transition: color $transition-fast;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -1px;
+      width: 0;
+      height: 1px;
+      background-color: #5e81fe;
+      transition: width $transition-medium;
+    }
+
+    &:hover {
+      color: #5e81fe;
+
+      &::after {
+        width: 100%;
+      }
+    }
+  }
 }
 
 // === / FOOTER ===
