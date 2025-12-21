@@ -32,10 +32,8 @@
             <div class="btn-icon-play-wrapper">
               <a href="#" aria-label="Play">
                 <span class="icon-play">
-                  <svg width="10" height="11" viewBox="0 0 10 11" fill="none">
-                    <path
-                      d="M9.23077 4.17675C10.2564 4.76486 10.2564 6.23514 9.23077 6.82325L2.30769 10.793C1.28205 11.3811 0 10.646 0 9.46976V1.53024C0 0.354015 1.28205 -0.381125 2.30769 0.206988L9.23077 4.17675Z"
-                      fill="#5E81FF" />
+                  <svg width="10" height="11">
+                    <use xlink:href="./img/sprite.svg#play"></use>
                   </svg>
                 </span>
               </a>
@@ -68,7 +66,8 @@
     <section class="section-outer section-plan-and-manage">
       <div class="section-inner">
         <div class="section-plan-and-manage__content">
-          <img class="aside-image" src="img/illustration.png" alt="illustration with different digital devices">
+          <!-- FIXME: .png -->
+          <img class="aside-image" src="./img/illustration.webp" alt="illustration with different digital devices">
           <h2>DESKTOP AND MOBILE APP</h2>
           <div class="section-subtitle"><span>Plan</span> and <span>manage</span></div>
           <div class="text">
@@ -79,10 +78,8 @@
           <div class="btn-group">
             <a class="btn btn--secondary" href="#">
               View video
-              <svg width="7" height="8" viewBox="0 0 7 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M6 2.73354C6.66667 3.11844 6.66667 4.08069 6 4.46559L1.5 7.06367C0.833333 7.44857 0 6.96744 0 6.19764V1.00149C0 0.231691 0.833333 -0.249434 1.5 0.135467L6 2.73354Z"
-                  fill="white" />
+              <svg width="7" height="8">
+                <use xlink:href="./img/sprite.svg#play"></use>
               </svg>
             </a>
             <a class="btn btn--no-bg" href="#">See features</a>
@@ -100,8 +97,8 @@
         <ul class="features-list">
           <li class="features-list__item">
             <div class="features-list__item-icon">
-              <svg class="features-list__item-svg" width="18" height="21" fill="none">
-                <path d="M2 7.873V19h4.421L9 17l2.579 2H16V7.873L9 2 2 7.873Z" stroke="#4074F8" stroke-width="2.5" />
+              <svg width="18" height="21">
+                <use xlink:href="./img/sprite.svg#house"></use>
               </svg>
             </div>
             <h3 class="features-list__item-title">
@@ -112,10 +109,9 @@
             </div>
           </li>
           <li class="features-list__item">
-            <div class="features-list__item-icon">
-              <svg class="features-list__item-svg features-list__item-svg--ml" width="28" height="18" fill="none">
-                <path d="M19.7544 16H2V2h10.0877l1.6141 3.1613h6.0526v1.8064m0 9.0323L25 6.9677h-5.2456m0 9.0323V6.9677"
-                  stroke="#4074F8" stroke-width="2.5" />
+            <div class="features-list__item-icon features-list__item-icon--ml">
+              <svg width='28' height='18'>
+                <use xlink:href='./img/sprite.svg#folder'></use>
               </svg>
             </div>
             <h3 class="features-list__item-title">
@@ -126,9 +122,9 @@
             </div>
           </li>
           <li class="features-list__item">
-            <div class="features-list__item-icon">
-              <svg class="features-list__item-svg features-list__item-svg--mt" width="22" height="20" fill="none">
-                <path d="M2 2v11.5h2.28L5.5 17 9 13.5h10.75V2H2Z" stroke="#4074F8" stroke-width="2.5" />
+            <div class="features-list__item-icon features-list__item-icon--mt">
+              <svg width='22' height='20'>
+                <use xlink:href='./img/sprite.svg#chat'></use>
               </svg>
             </div>
             <h3 class="features-list__item-title">
@@ -139,9 +135,9 @@
             </div>
           </li>
           <li class="features-list__item">
-            <div class="features-list__item-icon">
-              <svg class="features-list__item-svg features-list__item-svg--mb" width="21" height="19" fill="none">
-                <path d="M2 11.97v5.53h17.25v-5.53M6.75 5l4-3m4 3-4-3m0 0v10.5" stroke="#4074F8" stroke-width="2.5" />
+            <div class="features-list__item-icon features-list__item-icon--mb">
+              <svg width='21' height='19'>
+                <use xlink:href='./img/sprite.svg#arrow-up'></use>
               </svg>
             </div>
             <h3 class="features-list__item-title">
@@ -166,18 +162,18 @@
       <h2 class="visually-hidden">Statistic</h2>
       <div class="section-stats__left">
         <div class="section-stats__icon">
-          <img src="img/icons/speed.svg" alt="Speedometer icon">
+          <img src="img/stats/speed.svg" alt="Speedometer icon">
         </div>
         <div class="section-stats__number">
           89%
         </div>
         <p class="section-stats__text">
-          Customers who have increased their productivity
+          Customers who have<br /> increased their productivity
         </p>
       </div>
       <div class="section-stats__right">
         <div class="section-stats__icon">
-          <img src="img/icons/people.svg" alt="People icon">
+          <img src="img/stats/people.svg" alt="People icon">
         </div>
         <div class="section-stats__number">
           3123
@@ -285,7 +281,7 @@
           <li class="faq-accordion__item faq-accordion__item--active">
             <button class="faq-accordion__trigger">
               <svg>
-                <use xlink:href="./img/icons/sprite.svg#angle-down"></use>
+                <use xlink:href="./img/sprite.svg#angle-down"></use>
               </svg>
               <h3>Reque insolens in vel?</h3>
             </button>
@@ -300,7 +296,7 @@
           <li class="faq-accordion__item">
             <button class="faq-accordion__trigger">
               <svg>
-                <use xlink:href="./img/icons/sprite.svg#angle-down"></use>
+                <use xlink:href="./img/sprite.svg#angle-down"></use>
               </svg>
               <h3>Vis rebum error graecis ea, id sit postea accusamus?</h3>
             </button>
@@ -316,7 +312,7 @@
           <li class="faq-accordion__item">
             <button class="faq-accordion__trigger">
               <svg>
-                <use xlink:href="./img/icons/sprite.svg#angle-down"></use>
+                <use xlink:href="./img/sprite.svg#angle-down"></use>
               </svg>
               <h3>Lorem repudiandae ne nec?</h3>
             </button>
@@ -332,7 +328,7 @@
           <li class="faq-accordion__item">
             <button class="faq-accordion__trigger">
               <svg>
-                <use xlink:href="./img/icons/sprite.svg#angle-down"></use>
+                <use xlink:href="./img/sprite.svg#angle-down"></use>
               </svg>
               <h3>Ad dicit numquam vel. Et eos iudico feugait percipitur?</h3>
             </button>
@@ -350,7 +346,7 @@
           <li class="faq-accordion__item">
             <button class="faq-accordion__trigger">
               <svg>
-                <use xlink:href="./img/icons/sprite.svg#angle-down"></use>
+                <use xlink:href="./img/sprite.svg#angle-down"></use>
               </svg>
               <h3>Sea no dico percipitur. Fierent constituam definitiones id eum?</h3>
             </button>

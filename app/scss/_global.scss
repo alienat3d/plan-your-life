@@ -27,6 +27,12 @@ button {
   }
 }
 
+.text {
+  font-size: $fs-sm;
+  line-height: 1.91;
+  letter-spacing: 0.03em;
+}
+
 .btn {
   @include quicksand;
 

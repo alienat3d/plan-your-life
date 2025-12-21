@@ -47,7 +47,10 @@ function bem() {
 }
 
 function svg() {
-  return src(sourceFolder + "/img/*.svg")
+  return src([
+    sourceFolder + "/img/**/*.svg",
+    "!" + sourceFolder + "/img/icons/**/*",
+  ])
     .pipe(svgmin())
     .pipe(dest(buildFolder + "/img"));
 }
@@ -56,7 +59,7 @@ function sprite() {
   return src(sourceFolder + "/img/icons/**/*.svg")
     .pipe(svgstore({ inlineSvg: true }))
     .pipe(rename("sprite.svg"))
-    .pipe(dest(buildFolder + "/img/icons"));
+    .pipe(dest(buildFolder + "/img"));
 }
 
 function scss() {

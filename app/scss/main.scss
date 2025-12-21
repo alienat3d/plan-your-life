@@ -134,14 +134,13 @@ body {
     text-align: center;
     background-repeat: no-repeat;
     background-position: 50% 100%;
-    background-size: cover;
+    background-size: auto;
   }
 
   &__item-content {
     .text {
       max-width: 60%;
       margin: 0 auto $base * 5;
-      line-height: 2;
     }
   }
 }
@@ -160,6 +159,12 @@ body {
     padding-left: 4px;
     width: 10px;
     height: 11px;
+    color: #5e81ff;
+    transition: transform $transition-fast;
+  }
+
+  &:hover svg {
+    transform: scale(1.4);
   }
 }
 
@@ -189,6 +194,8 @@ body {
 
 // === PLAN-AND-MANAGE ===
 .section-plan-and-manage {
+  padding-top: 88px;
+  padding-bottom: 129px;
   position: relative;
   overflow: hidden;
   background-color: #f5f8ff;
@@ -198,13 +205,12 @@ body {
 
     .aside-image {
       position: absolute;
-      top: 0;
+      top: 131px;
       left: 50%;
     }
 
     .text {
       margin-bottom: $base * 12;
-      line-height: 2;
     }
 
     .btn-group {
@@ -227,7 +233,9 @@ body {
 
 // === FEATURES ===
 .section-features {
-  background: url("../images/blue-clouds.svg") no-repeat 50% 50%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background: url("../img/blue-clouds.svg") no-repeat 50% 50%;
 
   .section-subtitle {
     margin-bottom: 92px;
@@ -243,9 +251,9 @@ body {
       display: inline-flex;
       align-items: center;
       text-transform: uppercase;
-      font-weight: $fw-medium;
-      font-size: $fs-xxs;
+      font-size: $fs-xs;
       line-height: 1.8;
+      color: #adb3cb;
 
       &::before,
       &::after {
@@ -267,15 +275,15 @@ body {
 }
 
 .features-list {
+  $parent: &;
   @include list-null;
-
+  margin-bottom: $base * 29;
   display: flex;
   justify-content: space-around;
   text-align: center;
 
   // .features-list__item
   &__item {
-    margin-bottom: $base * 23;
     position: relative;
     flex-basis: 25%;
 
@@ -294,17 +302,12 @@ body {
     }
 
     &:hover {
-      .features-list__item-icon {
+      #{$parent}__item-icon {
         background-color: $color-pink;
+        color: $color-red;
       }
 
-      .features-list__item-svg {
-        path {
-          stroke: $color-red;
-        }
-      }
-
-      .features-list__item-title {
+      #{$parent}__item-title {
         color: $color-red;
       }
     }
@@ -319,24 +322,17 @@ body {
     align-items: center;
     width: $base * 17;
     height: $base * 17;
+    color: #4074f8;
     background-color: $color-bg;
-    transition: background-color $transition-fast;
-  }
+    transition: all $transition-fast;
 
-  &__item-svg {
-    path {
-      transition: stroke $transition-fast;
-    }
-
-    &--mt {
+    &--mt svg {
       margin-top: 2px;
     }
-
-    &--mb {
+    &--mb svg {
       margin-bottom: 2px;
     }
-
-    &--ml {
+    &--ml svg {
       margin-left: 3px;
     }
   }
@@ -344,9 +340,10 @@ body {
   // .features-list__item-title
   &__item-title {
     @include roboto;
-    margin-bottom: $base * 7;
+    margin-bottom: $base * 6;
     font-weight: $fw-bold;
-    font-size: $fs-xs;
+    font-size: 14px;
+    line-height: 1.77;
     color: #4074f8;
     transition: color $transition-fast;
   }
@@ -411,15 +408,17 @@ body {
   }
 
   &__number {
-    margin-bottom: $base * 1;
+    margin-bottom: $base * 4;
     font-size: $fs-xxl;
   }
 
   &__text {
+    margin: 0;
     width: 40%;
     font-weight: $fw-medium;
-    font-size: $fs-xs;
+    font-size: $fs-md;
     line-height: 1.3;
+    letter-spacing: 3%;
   }
 }
 
@@ -498,7 +497,7 @@ body {
       transform: translate(-50%, -350%);
       border-radius: 50%;
       background-color: $color-white;
-      background-image: url("../images/icons/magnifying-glass.svg");
+      background-image: url("../img/icons/magnifying-glass.svg");
       background-repeat: no-repeat;
       background-position: center;
 
@@ -584,9 +583,6 @@ body {
 
     .text {
       margin-bottom: $base * 14;
-      font-size: $fs-xs;
-      line-height: 1.9;
-      letter-spacing: 0.03em;
     }
 
     .btns .btn--primary {
@@ -613,7 +609,7 @@ body {
   &--prev {
     margin-right: $base * 16;
     right: 100%;
-    background: url("../images/icons/arrow-blue-left.svg") no-repeat 50% 50%;
+    background: url("../img/icons/arrow-blue-left.svg") no-repeat 50% 50%;
 
     &:hover {
       transform: translate(-15%, -50%);
@@ -623,7 +619,7 @@ body {
   &--next {
     margin-left: $base * 16;
     left: 100%;
-    background: url("../images/icons/arrow-blue-right.svg") no-repeat 50% 50%;
+    background: url("../img/icons/arrow-blue-right.svg") no-repeat 50% 50%;
 
     &:hover {
       transform: translate(15%, -50%);
@@ -670,7 +666,6 @@ body {
     .text {
       font-weight: $fw-medium;
       font-size: $fs-xs;
-      line-height: 1.9;
       color: #a4abc8;
     }
   }
@@ -838,7 +833,6 @@ body {
   .text {
     margin: 0 auto $base * 10;
     max-width: 75%;
-    line-height: 2;
   }
 
   .section-inner {
