@@ -10,15 +10,81 @@ body {
 
 // === HEADER ===
 .section-header {
+  position: relative;
+
   .section-inner {
     padding-top: $padding-vertical-xs;
     padding-bottom: $padding-vertical-xs;
   }
 }
 
+.btn-burger {
+  display: none;
+
+  // .btn-burger__line
+  &__line {
+    display: block;
+    width: $base * 5.5;
+    height: calc($base / 2);
+    background-color: #000;
+
+    & + & {
+      margin-top: $base;
+    }
+  }
+
+  @media (max-width: $breakpoint-md-max) {
+    display: block;
+    margin-left: auto;
+  }
+}
+
 .main-navigation {
   display: flex;
   align-items: center;
+
+  @media (max-width: $breakpoint-md-max) {
+    .section-footer & {
+      flex-direction: column;
+    }
+  }
+
+  // .main-navigation__inner-wrap
+  &__inner-wrap {
+    margin-left: $base * 18;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+
+    @media (max-width: $breakpoint-md-max) {
+      flex-direction: column;
+      row-gap: 30px;
+    }
+
+    .section-header &,
+    .section-footer & {
+      @media (max-width: $breakpoint-md-max) {
+        margin-left: 0;
+      }
+    }
+    .section-header & {
+      @media (max-width: $breakpoint-md-max) {
+        display: none;
+        z-index: 10;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        padding: $base * 5 $base * 5 $base * 8 $base * 5;
+        background-color: $color-white;
+      }
+    }
+    .section-footer & {
+      @media (max-width: $breakpoint-md-max) {
+        margin-top: $base * 6;
+      }
+    }
+  }
 }
 
 .logo {
@@ -29,10 +95,6 @@ body {
     background-color: #5e81fe;
     border-radius: 100%;
   }
-}
-
-.nav {
-  margin-left: $base * 18;
 }
 
 .nav-wrapper {
@@ -68,6 +130,10 @@ body {
 
 .socials {
   margin-left: auto;
+
+  @media (max-width: $breakpoint-md-max) {
+    margin-left: 0;
+  }
 }
 
 .socials-wrapper {
@@ -76,6 +142,7 @@ body {
   display: flex;
   align-items: flex-end;
 
+  // .socials-wrapper__item
   &__item {
     --icon-color-1: #9399ab;
     --icon-color-2: #70788e;
@@ -89,6 +156,10 @@ body {
 
     & + & {
       margin-left: $base * 10;
+
+      @media (max-width: $breakpoint-md-max) {
+        margin-left: 50px;
+      }
     }
 
     &-link {
@@ -104,6 +175,11 @@ body {
 
 .btn-wrapper {
   margin-left: $base * 11;
+
+  @media (max-width: $breakpoint-md-max) {
+    margin-top: 10px;
+    margin-left: 0;
+  }
 }
 
 // === / HEADER ===
@@ -111,6 +187,7 @@ body {
 // === HERO-IMAGE ===
 .section-hero-image {
   position: relative;
+  padding: 0;
   background-color: #f4f7ff;
 
   .dots {
@@ -363,7 +440,7 @@ body {
 // === STATS ===
 .section-stats {
   @include quicksand;
-
+  padding: 0;
   display: flex;
   background-color: #e9efff;
 
@@ -458,6 +535,7 @@ body {
   &__item {
     padding: $base * 16 $base * 10 $base * 16 $base * 8;
     display: flex;
+    justify-content: space-between;
   }
 
   &__item-gallery,
@@ -578,8 +656,6 @@ body {
 
   // .slider-blog__item-content
   &__item-content {
-    margin-left: 67px;
-
     .title {
       margin-bottom: $base * 8;
       font-size: $fs-xl;
@@ -611,23 +687,35 @@ body {
   height: $base * 10;
   transition: transform $transition-medium ease;
 
+  @media (max-width: $breakpoint-lg-max) {
+    display: none;
+  }
+
+  &--prev,
+  &--next {
+    background: url("../img/upload/slider-blog/arrow-blue-left.svg") no-repeat
+      50% 50%;
+  }
+
+  // .btn-blog--prev
   &--prev {
     margin-right: $base * 16;
     right: 100%;
-    background: url("../img/icons/arrow-blue-left.svg") no-repeat 50% 50%;
+    transform: translateY(-50%);
 
     &:hover {
       transform: translate(-15%, -50%);
     }
   }
 
+  // .btn-blog--next
   &--next {
     margin-left: $base * 16;
     left: 100%;
-    background: url("../img/icons/arrow-blue-right.svg") no-repeat 50% 50%;
+    transform: rotate(180deg) translateY(50%);
 
     &:hover {
-      transform: translate(15%, -50%);
+      transform: rotate(180deg) translate(-15%, 50%);
     }
   }
 }
@@ -949,6 +1037,11 @@ body {
   font-size: $fs-xs;
   font-weight: $fw-medium;
   color: #aeb8d0;
+
+  @media (max-width: $breakpoint-md-max) {
+    margin-left: 0;
+    text-align: center;
+  }
 
   a {
     position: relative;
