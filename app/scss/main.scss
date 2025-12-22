@@ -247,6 +247,7 @@ body {
     justify-content: center;
 
     &__or-word {
+      @include openSans;
       margin: 0 $base * 4;
       display: inline-flex;
       align-items: center;
@@ -339,7 +340,7 @@ body {
 
   // .features-list__item-title
   &__item-title {
-    @include roboto;
+    @include openSans;
     margin-bottom: $base * 6;
     font-weight: $fw-bold;
     font-size: 14px;
@@ -350,6 +351,7 @@ body {
 
   // .features-list__item-text
   &__item-text {
+    @include openSans;
     font-size: $fs-xs;
     line-height: 1.77;
     color: #adb3cb;
@@ -645,6 +647,7 @@ body {
     padding: $base * 28 $base * 2;
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
 
   &__left,
@@ -656,8 +659,7 @@ body {
   &__left {
     max-width: $base * 85;
 
-    h5 {
-      margin-top: $base * 13;
+    h2 {
       margin-bottom: $base * 9;
     }
 
@@ -667,6 +669,7 @@ body {
     }
 
     .text {
+      @include openSans;
       font-weight: $fw-medium;
       font-size: $fs-xs;
       color: #a4abc8;
@@ -696,14 +699,15 @@ body {
 
     position: relative;
     border: 1px solid $color-divider;
-    padding: $base * 9 $base * 16 $base * 13;
+    padding: $base * 9 $base * 17 $base * 13;
     background-color: $color-white;
     box-shadow: 0px 15px 50px #d4dcf1;
   }
 
   // .slider-testimonials__item-text
   &__item-text {
-    font-size: $fs-xs;
+    margin: 0;
+    font-size: 14px;
     line-height: 1.7;
     color: #676f95;
   }
