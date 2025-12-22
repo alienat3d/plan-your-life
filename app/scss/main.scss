@@ -736,6 +736,10 @@ body {
 
 // === FAQ ===
 .section-faq {
+  .section-inner {
+    padding-top: $padding-vertical-lg;
+    padding-bottom: $padding-vertical-lg;
+  }
   .section-subtitle {
     margin-bottom: $base * 18;
     font-size: 24px;
