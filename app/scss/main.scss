@@ -882,6 +882,7 @@ body {
       font-size: 13px;
     }
 
+    // .form__input
     &__input {
       border: 1px solid transparent;
       padding: 0 23px;
@@ -893,30 +894,36 @@ body {
       }
     }
 
+    // .form__btn
     &__btn {
       border: 1px solid transparent;
       flex-basis: 184px;
     }
   }
 
+  // .section-newsletter__left
   &__left {
     flex-basis: 35%;
   }
 
+  // .section-newsletter__title
   &__title {
     @include quicksand;
     margin-bottom: $base * 4;
     text-transform: initial;
     font-weight: $fw-bold;
-    font-size: $fs-xs;
+    font-size: $fs-md;
     color: #3d4f9f;
   }
 
+  // .section-newsletter__description
   &__description {
-    font-size: $fs-xs;
+    margin: 0;
+    font-size: 14px;
     line-height: 1.9;
   }
 
+  // .section-newsletter__right
   &__right {
     flex-basis: 55%;
   }
@@ -929,8 +936,8 @@ body {
   border-bottom: 0;
 
   .section-inner {
-    padding-top: $padding-vertical-sm;
-    padding-bottom: $padding-vertical-sm;
+    padding-top: $padding-vertical-md;
+    padding-bottom: $padding-vertical-md;
   }
 }
 
