@@ -18,10 +18,14 @@ button {
 }
 
 .section-inner {
-  max-width: 900px;
   margin: 0 auto;
-  padding-top: $padding-vertical;
-  padding-bottom: $padding-vertical;
+  padding: $padding-vertical 20px;
+  max-width: 920px;
+
+  @media (max-width: $breakpoint-md-max) {
+    padding-top: $padding-vertical-md;
+    padding-bottom: $padding-vertical-md;
+  }
 
   &--wide {
     max-width: 1200px;

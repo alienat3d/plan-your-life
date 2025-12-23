@@ -1,0 +1,9 @@
+// Converts px to rem
+// We can wrap it in the rem() function to dynamically resize all sizes with the "html" and "font-size" tags. Make sure all sizes are written as variables throughout the website or calculated with the $base variable.
+/* @function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+@function rem($num) {
+  @return (strip-unit($num) / 16) * 1rem;
+} */

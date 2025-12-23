@@ -1,8 +1,19 @@
+// @import "functions";
 @import "variables";
 @import "fonts";
 @import "mixins";
 @import "global";
 // === / IMPORT ===
+
+// We can wrap it in the rem() function to dynamically resize all sizes with the "html" and "font-size" tags. Make sure all sizes are written as variables throughout the website or calculated with the $base variable.
+/* html {
+  @media (max-width: $breakpoint-md-max) {
+    font-size: 14px;
+  }
+  @media (max-width: $breakpoint-sm-max) {
+    font-size: 10px;
+  }
+} */
 
 body {
   margin: 0;
@@ -13,8 +24,8 @@ body {
   position: relative;
 
   .section-inner {
-    padding-top: $padding-vertical-xs;
-    padding-bottom: $padding-vertical-xs;
+    padding-top: $padding-vertical-xxs;
+    padding-bottom: $padding-vertical-xxs;
   }
 }
 
@@ -181,7 +192,6 @@ body {
     margin-left: 0;
   }
 }
-
 // === / HEADER ===
 
 // === HERO-IMAGE ===
@@ -202,9 +212,10 @@ body {
   @include list-null;
 
   .section-inner {
-    padding-top: 92px;
+    padding-top: $padding-vertical-md;
   }
 
+  // .slider-hero-image__item
   &__item {
     padding-bottom: 30px;
     height: $base * 140;
@@ -214,6 +225,7 @@ body {
     background-size: auto;
   }
 
+  // .slider-hero-image__item-content
   &__item-content {
     .text {
       max-width: 60%;
@@ -271,14 +283,28 @@ body {
 
 // === PLAN-AND-MANAGE ===
 .section-plan-and-manage {
-  padding-top: 88px;
-  padding-bottom: 129px;
+  // padding-bottom: $padding-vertical;
   position: relative;
   overflow: hidden;
   background-color: #f5f8ff;
 
+  .section-inner {
+    padding-top: $padding-vertical-xl;
+    padding-bottom: $padding-vertical-xxl;
+  }
+
+  @media (max-width: $breakpoint-md-max) {
+    padding-top: $padding-vertical-sm;
+    padding-bottom: $padding-vertical-md;
+  }
+
+  // .section-plan-and-manage__content
   &__content {
-    width: 50%;
+    width: 65%;
+
+    @media (min-width: $breakpoint-lg-min) {
+      width: 50%;
+    }
 
     .aside-image {
       position: absolute;
@@ -310,9 +336,12 @@ body {
 
 // === FEATURES ===
 .section-features {
-  padding-top: 50px;
-  padding-bottom: 50px;
   background: url("../img/blue-clouds.svg") no-repeat 50% 50%;
+
+  .section-inner {
+    padding-top: $padding-vertical-lg;
+    padding-bottom: $padding-vertical-lg;
+  }
 
   .section-subtitle {
     margin-bottom: 92px;
@@ -359,6 +388,10 @@ body {
   display: flex;
   justify-content: space-around;
   text-align: center;
+
+  @media (max-width: $breakpoint-md-max) {
+    margin-bottom: $base * 22;
+  }
 
   // .features-list__item
   &__item {
@@ -449,27 +482,31 @@ body {
     display: flex;
     flex-direction: column;
     flex-basis: 50%;
-    padding: $base * 17 $base * 23;
+    padding: $base * 18 $base * 22;
     letter-spacing: 0.03em;
   }
 
+  // .section-stats__left
   &__left {
     text-align: right;
     color: $color-white;
     background: linear-gradient(229.32deg, #6888ff 12.77%, #5e80ff 73.11%);
 
-    .section-stats__icon {
-      img {
-        width: 65px;
-        height: 66px;
+    .section-stats {
+      &__icon {
+        img {
+          width: 65px;
+          height: 66px;
+        }
       }
-    }
 
-    .section-stats__text {
-      margin-left: auto;
+      &__text {
+        margin-left: auto;
+      }
     }
   }
 
+  // .section-stats__right
   &__right {
     color: #5e80ff;
     background: linear-gradient(101.48deg, #e9efff 41.56%, #e0e9ff 81.53%);
@@ -482,22 +519,28 @@ body {
     }
   }
 
+  // .section-stats__icon
   &__icon {
     margin-bottom: $base * 6;
   }
 
+  // .section-stats__number
   &__number {
     margin-bottom: $base * 4;
     font-size: $fs-xxl;
   }
 
+  // .section-stats__text
   &__text {
     margin: 0;
-    width: 40%;
     font-weight: $fw-medium;
     font-size: $fs-md;
     line-height: 1.3;
     letter-spacing: 3%;
+
+    @media (min-width: $breakpoint-lg-min) {
+      width: 40%;
+    }
   }
 }
 
@@ -520,6 +563,10 @@ body {
 
   .dots {
     margin-top: $base * 16;
+
+    @media (max-width: $breakpoint-md-max) {
+      margin-top: $base * 10;
+    }
   }
 }
 
@@ -538,124 +585,131 @@ body {
     justify-content: space-between;
   }
 
-  &__item-gallery,
-  &__item-content {
-    flex-basis: 45%;
-  }
-
   // .slider-blog__item-gallery
   &__item-gallery {
     display: grid;
     grid-template-rows: repeat(2, 127px);
     grid-template-columns: repeat(3, 127px);
     gap: 13px;
-  }
 
-  // .slider-blog__item-gallery .image-link
-  &__item-gallery .image-link {
-    overflow: hidden;
-    position: relative;
-    display: block;
-    border-radius: 5px;
-    background-color: $color-bg;
-    box-shadow: 0px 15px 50px #e5ebf8;
+    @media (max-width: $breakpoint-md-max) {
+      grid-template-rows: repeat(2, 110px);
+      grid-template-columns: repeat(3, 110px);
+      gap: 8px;
+    }
 
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
+    .image-link {
+      overflow: hidden;
+      position: relative;
+      display: block;
       border-radius: 5px;
-    }
-
-    &::after {
-      content: "";
-      z-index: 10;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -350%);
-      border-radius: 50%;
-      background-color: $color-white;
-      background-image: url("../img/upload/slider-blog/magnifying-glass.svg");
-      background-repeat: no-repeat;
-      background-position: center;
-
-      transition: transform $transition-medium;
-    }
-
-    &:hover::after {
-      transform: translate(-50%, -50%);
-    }
-
-    img {
-      // width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    &--big {
-      position: relative;
-      // grid-column-start: 1;
-      // grid-column-end: 3;
-      grid-column: 1 / 3;
-      grid-row: 1 / 3;
+      background-color: $color-bg;
+      box-shadow: 0px 15px 50px #e5ebf8;
 
       &::before {
-        background: linear-gradient(
-          13.46deg,
-          rgba(255, 199, 53, 0.44) 1.89%,
-          rgba(255, 227, 154, 0.93) 1.9%,
-          rgba(255, 159, 90, 0) 68.24%
-        );
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border-radius: 5px;
       }
 
       &::after {
-        width: 65px;
-        height: 65px;
+        content: "";
+        z-index: 10;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -350%);
+        border-radius: 50%;
+        background-color: $color-white;
+        background-image: url("../img/upload/slider-blog/magnifying-glass.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+
+        transition: transform $transition-medium;
       }
-    }
 
-    &--small-1,
-    &--small-2 {
-      position: relative;
-      grid-column: 3 / 4;
-
-      &::after {
-        width: 44px;
-        height: 44px;
+      &:hover::after {
+        transform: translate(-50%, -50%);
       }
-    }
 
-    &--small-1 {
-      grid-row: 1 / 2;
-
-      &::before {
-        background: linear-gradient(
-          27.48deg,
-          rgba(255, 53, 53, 0.48) 14.02%,
-          rgba(255, 179, 90, 0) 68%
-        );
+      img {
+        // width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
-    }
 
-    &--small-2 {
-      grid-row: 2 / 3;
+      &--big {
+        position: relative;
+        // grid-column-start: 1;
+        // grid-column-end: 3;
+        grid-column: 1 / 3;
+        grid-row: 1 / 3;
 
-      &::before {
-        background: linear-gradient(
-          13.49deg,
-          rgba(53, 170, 255, 0.68) 11.59%,
-          rgba(90, 136, 255, 0) 96.88%
-        );
+        &::before {
+          background: linear-gradient(
+            13.46deg,
+            rgba(255, 199, 53, 0.44) 1.89%,
+            rgba(255, 227, 154, 0.93) 1.9%,
+            rgba(255, 159, 90, 0) 68.24%
+          );
+        }
+
+        &::after {
+          width: 65px;
+          height: 65px;
+        }
+      }
+
+      &--small-1,
+      &--small-2 {
+        position: relative;
+        grid-column: 3 / 4;
+
+        &::after {
+          width: 44px;
+          height: 44px;
+        }
+      }
+
+      &--small-1 {
+        grid-row: 1 / 2;
+
+        &::before {
+          background: linear-gradient(
+            27.48deg,
+            rgba(255, 53, 53, 0.48) 14.02%,
+            rgba(255, 179, 90, 0) 68%
+          );
+        }
+      }
+
+      &--small-2 {
+        grid-row: 2 / 3;
+
+        &::before {
+          background: linear-gradient(
+            13.49deg,
+            rgba(53, 170, 255, 0.68) 11.59%,
+            rgba(90, 136, 255, 0) 96.88%
+          );
+        }
       }
     }
   }
 
   // .slider-blog__item-content
   &__item-content {
+    margin-left: $base * 20;
+    flex-grow: 1;
+
+    @media (max-width: $breakpoint-md-max) {
+      margin-left: $base * 6;
+    }
+
     .title {
       margin-bottom: $base * 8;
       font-size: $fs-xl;
@@ -726,16 +780,15 @@ body {
 .section-testimonials {
   background: linear-gradient(180deg, #eaf0ff 0%, #f6f9ff 100%);
 
-  .section-subtitle {
-    margin-bottom: $base * 4;
-    font-size: $fs-xl;
-  }
-
   .section-inner {
-    padding: $base * 28 $base * 2;
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  .section-subtitle {
+    margin-bottom: $base * 4;
+    font-size: $fs-xl;
   }
 
   &__left,
@@ -819,7 +872,6 @@ body {
     background-size: cover;
   }
 }
-
 // === / TESTIMONIALS ===
 
 // === FAQ ===
@@ -904,7 +956,6 @@ body {
     padding: $base * 4 $base * 8;
   }
 }
-
 // === / FAQ ===
 
 // === GET-STARTED ===
@@ -955,6 +1006,10 @@ body {
   .section-inner {
     display: flex;
     justify-content: space-between;
+
+    @media (max-width: $breakpoint-md-max) {
+      flex-direction: column;
+    }
   }
 
   .form {
@@ -992,6 +1047,10 @@ body {
   // .section-newsletter__left
   &__left {
     flex-basis: 35%;
+
+    @media (max-width: $breakpoint-md-max) {
+      margin-bottom: $base * 10;
+    }
   }
 
   // .section-newsletter__title
@@ -1024,8 +1083,8 @@ body {
   border-bottom: 0;
 
   .section-inner {
-    padding-top: $padding-vertical-md;
-    padding-bottom: $padding-vertical-md;
+    padding-top: $padding-vertical-xs;
+    padding-bottom: $padding-vertical-xs;
   }
 }
 
