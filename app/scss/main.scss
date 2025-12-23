@@ -539,6 +539,10 @@ body {
     flex-basis: 50%;
     padding: $base * 18 $base * 22;
     letter-spacing: 0.03em;
+
+    @media (max-width: $breakpoint-xs-max) {
+      padding: $base * 8 $base * 10;
+    }
   }
 
   // .section-stats__left
