@@ -256,7 +256,6 @@ body {
     transform: scale(1.4);
   }
 }
-
 // === / HERO-IMAGE ===
 
 // === CUSTOMERS ===
@@ -268,6 +267,14 @@ body {
     padding-top: $padding-vertical-sm;
     padding-bottom: $padding-vertical-sm;
 
+    @media (max-width: $breakpoint-xs-max) {
+      padding-top: $padding-vertical-xs;
+      padding-bottom: $padding-vertical-xs;
+      flex-wrap: wrap;
+      justify-content: center;
+      row-gap: $base * 4;
+    }
+
     a {
       opacity: 0.3;
       transition: $transition-fast;
@@ -275,15 +282,18 @@ body {
       &:hover {
         opacity: 1;
       }
+
+      @media (max-width: $breakpoint-xs-max) {
+        text-align: center;
+        flex-basis: 45%;
+      }
     }
   }
 }
-
 // === / CUSTOMERS ===
 
 // === PLAN-AND-MANAGE ===
 .section-plan-and-manage {
-  // padding-bottom: $padding-vertical;
   position: relative;
   overflow: hidden;
   background-color: #f5f8ff;
@@ -291,11 +301,11 @@ body {
   .section-inner {
     padding-top: $padding-vertical-xl;
     padding-bottom: $padding-vertical-xxl;
-  }
 
-  @media (max-width: $breakpoint-md-max) {
-    padding-top: $padding-vertical-sm;
-    padding-bottom: $padding-vertical-md;
+    @media (max-width: $breakpoint-xs-max) {
+      padding-top: $padding-vertical-md;
+      padding-bottom: $padding-vertical-md;
+    }
   }
 
   // .section-plan-and-manage__content
@@ -305,15 +315,28 @@ body {
     @media (min-width: $breakpoint-lg-min) {
       width: 50%;
     }
+    @media (max-width: $breakpoint-xs-max) {
+      width: 70%;
+    }
 
     .aside-image {
       position: absolute;
       top: 131px;
       left: 50%;
+
+      @media (max-width: $breakpoint-xs-max) {
+        top: 20%;
+        left: 31%;
+      }
     }
 
     .text {
       margin-bottom: $base * 12;
+
+      @media (max-width: $breakpoint-xs-max) {
+        z-index: 1;
+        position: relative;
+      }
     }
 
     .btn-group {
@@ -1075,7 +1098,6 @@ body {
     flex-basis: 55%;
   }
 }
-
 // === / NEWSLETTER ===
 
 // === FOOTER ===
