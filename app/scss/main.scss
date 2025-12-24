@@ -1033,6 +1033,11 @@ body {
     padding: $base * 4 $base * 4 0 $base * 16;
     justify-content: space-between;
     align-items: center;
+
+    @media (max-width: $breakpoint-xs-max) {
+      padding-left: $base * 8;
+      flex-direction: column;
+    }
   }
 
   // .faq-accordion__text
@@ -1040,6 +1045,11 @@ body {
     flex-basis: 385px;
     font-size: 14px;
     line-height: 191%;
+
+    @media (max-width: $breakpoint-xs-max) {
+      margin-bottom: $base * 9;
+      flex-basis: initial;
+    }
   }
 
   // .faq-accordion__link
@@ -1080,7 +1090,10 @@ body {
 
   .text {
     margin: 0 auto $base * 10;
-    max-width: 75%;
+
+    @media (min-width: $breakpoint-sm-min) {
+      max-width: 75%;
+    }
   }
 
   .section-inner {
