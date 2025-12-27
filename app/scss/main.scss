@@ -179,7 +179,34 @@ body {
 
 // === HEADER ===
 .section-header {
-  position: relative;
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: $color-bg;
+
+  &::before {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    content: "";
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(#000, 0.3);
+  }
+
+  // .section-header--active-open
+  &--active-open {
+    &::before {
+      display: block;
+    }
+
+    .main-navigation__inner-wrap {
+      display: flex;
+    }
+  }
 
   .section-inner {
     padding-top: $padding-vertical-xxs;
@@ -212,7 +239,7 @@ body {
 // === HERO-IMAGE ===
 .section-hero-image {
   position: relative;
-  padding: 0;
+  padding: 78px 0 0;
   background-color: #f4f7ff;
 
   .dots {

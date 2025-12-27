@@ -1,4 +1,4 @@
-export function handleAccordionFunc() {
+export default function handleAccordionFunc() {
   const faqAccordion = document.querySelector(".faq-accordion");
 
   faqAccordion.addEventListener("click", (evt) => {
