@@ -1,2 +1,3 @@
-import {testFunction} from './scripts/test';
-testFunction();
+import { handleAccordionFunc } from "./scripts/handle-accordion";
+
+handleAccordionFunc();
