@@ -1,3 +1,4 @@
+@import "../../node_modules/normalize.css/normalize";
 // @import "functions";
 @import "variables";
 @import "fonts";
@@ -19,37 +20,7 @@ body {
   margin: 0;
 }
 
-// === HEADER ===
-.section-header {
-  position: relative;
-
-  .section-inner {
-    padding-top: $padding-vertical-xxs;
-    padding-bottom: $padding-vertical-xxs;
-  }
-}
-
-.btn-burger {
-  display: none;
-
-  // .btn-burger__line
-  &__line {
-    display: block;
-    width: $base * 5.5;
-    height: calc($base / 2);
-    background-color: #000;
-
-    & + & {
-      margin-top: $base;
-    }
-  }
-
-  @media (max-width: $breakpoint-md-max) {
-    display: block;
-    margin-left: auto;
-  }
-}
-
+// === NAVIGATION ===
 .main-navigation {
   display: flex;
   align-items: center;
@@ -110,14 +81,24 @@ body {
 
 .nav-wrapper {
   @include list-null;
-
   display: flex;
 
+  @media (max-width: $breakpoint-xs-max) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  // .nav-wrapper__item
   &__item {
     & + & {
       margin-left: $base * 10;
+
+      @media (max-width: $breakpoint-xs-max) {
+        margin-left: 0;
+      }
     }
 
+    // .nav-wrapper__item-link
     &-link {
       @include quicksand;
 
@@ -131,6 +112,7 @@ body {
         color: $color-secondary;
       }
 
+      // .nav-wrapper__item-link--active
       &--active {
         font-weight: $fw-bold;
         color: #5e81fe;
@@ -173,6 +155,7 @@ body {
       }
     }
 
+    // .socials-wrapper__item-link
     &-link {
       color: #b6bac7;
       transition: all $transition-fast;
@@ -190,6 +173,38 @@ body {
   @media (max-width: $breakpoint-md-max) {
     margin-top: 10px;
     margin-left: 0;
+  }
+}
+// === / NAVIGATION ===
+
+// === HEADER ===
+.section-header {
+  position: relative;
+
+  .section-inner {
+    padding-top: $padding-vertical-xxs;
+    padding-bottom: $padding-vertical-xxs;
+  }
+}
+
+.btn-burger {
+  display: none;
+
+  // .btn-burger__line
+  &__line {
+    display: block;
+    width: $base * 5.5;
+    height: calc($base / 2);
+    background-color: #000;
+
+    & + & {
+      margin-top: $base;
+    }
+  }
+
+  @media (max-width: $breakpoint-md-max) {
+    display: block;
+    margin-left: auto;
   }
 }
 // === / HEADER ===
@@ -880,7 +895,7 @@ body {
     justify-content: space-between;
     align-items: center;
 
-    @media (max-width: $breakpoint-xs-max) {
+    @media (max-width: $breakpoint-sm-max) {
       flex-direction: column;
     }
   }
