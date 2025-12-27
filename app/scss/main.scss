@@ -238,29 +238,36 @@ body {
 
 // === HERO-IMAGE ===
 .section-hero-image {
+  overflow-x: hidden;
   position: relative;
-  padding: 78px 0 0;
+  padding-left: 0;
+  padding-right: 0;
   background-color: #f4f7ff;
 
-  .dots {
+  .swiper-pagination-bullets.swiper-pagination-horizontal {
+    bottom: $base * 5;
+  }
+
+  /* .dots {
     position: absolute;
     bottom: $base * 7;
     left: 50%;
     transform: translateX(-50%);
-  }
+  } */
 }
 
 .slider-hero-image {
   @include list-null;
 
   .section-inner {
-    padding-top: $padding-vertical-md;
+    padding-top: calc($padding-vertical-md + 78px);
+    height: $base * 90;
   }
 
   // .slider-hero-image__item
   &__item {
     padding-bottom: 30px;
-    height: $base * 140;
+    height: $base * 90;
     text-align: center;
     background-repeat: no-repeat;
     background-position: 50% 100%;

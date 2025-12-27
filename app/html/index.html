@@ -18,9 +18,47 @@
 
   <main>
     <!-- === HERO-IMAGE === -->
-    <section class="section-outer section-hero-image">
-      <ul class="slider-hero-image">
-        <li class="slider-hero-image__item" style="background-image: url('./img/clouds-and-graph.svg')">
+    <section class="section-outer section-hero-image swiper-container">
+      <ul class="slider-hero-image swiper-wrapper">
+        <li class="slider-hero-image__item swiper-slide" style="background-image: url('./img/clouds-and-graph.svg')">
+          <div class="section-inner slider-hero-image__item-content">
+            <h2>PLAN YOUR LIFE</h2>
+            <div class="section-subtitle">Increase your <span>productivity</span></div>
+            <div class="text">
+              Brute laoreet efficiendi id his, ea illum nonumes luptatum pro. Usu atqui laudem an, insolens gubergren
+              similique est cu. Et vel modus congue vituperata.
+            </div>
+            <div class="btn-icon-play-wrapper">
+              <a href="#" aria-label="Play">
+                <span class="icon-play">
+                  <svg width="10" height="11">
+                    <use xlink:href="./img/sprite.svg#play"></use>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+        </li>
+        <li class="slider-hero-image__item swiper-slide" style="background-image: url('./img/clouds-and-graph.svg')">
+          <div class="section-inner slider-hero-image__item-content">
+            <h2>PLAN YOUR LIFE</h2>
+            <div class="section-subtitle">Increase your <span>productivity</span></div>
+            <div class="text">
+              Brute laoreet efficiendi id his, ea illum nonumes luptatum pro. Usu atqui laudem an, insolens gubergren
+              similique est cu. Et vel modus congue vituperata.
+            </div>
+            <div class="btn-icon-play-wrapper">
+              <a href="#" aria-label="Play">
+                <span class="icon-play">
+                  <svg width="10" height="11">
+                    <use xlink:href="./img/sprite.svg#play"></use>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+        </li>
+        <li class="slider-hero-image__item swiper-slide" style="background-image: url('./img/clouds-and-graph.svg')">
           <div class="section-inner slider-hero-image__item-content">
             <h2>PLAN YOUR LIFE</h2>
             <div class="section-subtitle">Increase your <span>productivity</span></div>
@@ -40,11 +78,7 @@
           </div>
         </li>
       </ul>
-      <ul class="dots">
-        <li class="dots__item dots__item--active"></li>
-        <li class="dots__item"></li>
-        <li class="dots__item"></li>
-      </ul>
+      <ul class="swiper-pagination slider-hero-image__pagination"></ul>
     </section>
     <!-- === / HERO-IMAGE === -->
 
