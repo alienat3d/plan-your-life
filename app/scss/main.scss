@@ -931,6 +931,7 @@ body {
 
 // === TESTIMONIALS ===
 .section-testimonials {
+  overflow-x: hidden;
   background: linear-gradient(180deg, #eaf0ff 0%, #f6f9ff 100%);
 
   .section-inner {
@@ -938,7 +939,7 @@ body {
     justify-content: space-between;
     align-items: center;
 
-    @media (max-width: $breakpoint-sm-max) {
+    @media (max-width: $breakpoint-md-max) {
       flex-direction: column;
     }
   }
@@ -950,7 +951,11 @@ body {
 
   &__left,
   &__right {
-    flex-basis: 45%;
+    width: 45%;
+
+    @media (max-width: $breakpoint-md-max) {
+      width: 100%;
+    }
   }
 
   // .section-testimonials__left
@@ -997,8 +1002,21 @@ body {
   }
 }
 
+.slider-testimonials-container {
+  overflow: hidden;
+  margin: -50px 0 $base * 20 -50px;
+  width: calc(50vw + 50px);
+
+  @media (max-width: $breakpoint-md-max) {
+    margin-top: 0;
+    width: 110vw;
+  }
+}
+
 .slider-testimonials {
-  margin-bottom: $base * 20;
+  @include list-null;
+
+  display: flex;
 
   @media (max-width: $breakpoint-xs-max) {
     padding-left: 0;
@@ -1006,8 +1024,22 @@ body {
 
   // .slider-testimonials__item
   &__item {
-    @include list-null;
+    opacity: 0.45;
+    padding: 50px;
+    width: 25vw !important;
+    transition: opacity $transition-medium ease-in;
 
+    @media (max-width: $breakpoint-md-max) {
+      min-width: 50vw;
+    }
+
+    &.swiper-slide-active {
+      opacity: 1;
+    }
+  }
+
+  // .slider-testimonials__item-content
+  &__item-content {
     position: relative;
     border: 1px solid $color-divider;
     padding: $base * 9 $base * 17 $base * 13;
@@ -1040,6 +1072,12 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+  }
+
+  // .slider-testimonials__pagination
+  &__pagination {
+    bottom: -12% !important;
+    transform: translateX(31%) !important;
   }
 }
 // === / TESTIMONIALS ===
@@ -1179,7 +1217,6 @@ body {
     position: relative;
   }
 }
-
 // === / GET-STARTED ===
 
 // === NEWSLETTER ===
@@ -1310,5 +1347,4 @@ body {
     }
   }
 }
-
 // === / FOOTER ===

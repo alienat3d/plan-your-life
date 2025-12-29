@@ -25,14 +25,15 @@ export default function swiper() {
       clickable: true,
     },
   });
-}
 
-/* export default function swiper() {
-  const swiper = new Swiper(".slider-blog", {
-    modules: [Navigation, Pagination],
+  new Swiper(".slider-testimonials-container", {
+    modules: [Pagination],
+    // loop: true,
+    slidesPerView: "auto",
+    // spaceBetween: 64,
     pagination: {
-      el: ".slider-hero-image__pagination",
+      el: ".slider-testimonials__pagination",
       clickable: true,
     },
   });
-} */
+}
